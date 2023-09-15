@@ -13,14 +13,16 @@ package com.springmvc.controller;
 */
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class FrontController {
 
     @RequestMapping("/home")
-    public String home() {
+    public String home(Model model) {
         System.out.println("sending you to home...");
+        model.addAttribute("email","Monukd01dev@gmail.com");
         return "home";
     }
 

@@ -13,6 +13,8 @@
 </head>
 <body>
     <h1>I am home Page that you request for...</h1>
-    <a href="/about">click here to go to home</a>
+    <% String email = (String)request.getAttribute("email"); %>
+    <h2><%=email%></h2>
+
 </body>
 </html>
