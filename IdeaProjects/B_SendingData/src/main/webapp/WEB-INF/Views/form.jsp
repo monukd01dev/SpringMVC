@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -55,8 +56,9 @@
 <body>
 <%--    <h1>Hello, world</h1>--%>
     <div class="container mt-5 resp-width border">
-        <h3 class="text-center ">Registration</h3>
-        <form>
+        <h3 class="text-center ">${formTitle}</h3>
+<%--&lt;%&ndash;        <form action="/processform" method="post">&ndash;%&gt; don't give absolute url--%>
+        <form action="proccessform" method="post">
             <div class="form-group">
                 <label for="email" class="mine ">Email</label>
                 <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>

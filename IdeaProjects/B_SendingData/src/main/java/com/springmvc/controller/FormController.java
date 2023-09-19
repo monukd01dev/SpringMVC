@@ -1,7 +1,14 @@
 package com.springmvc.controller;
 
+import com.springmvc.model.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
 
 /*
     Name    : Monu KD (monukd01dev)
@@ -16,8 +23,43 @@ import org.springframework.web.bind.annotation.RequestMapping;
 */
 @Controller
 public class FormController {
+
+    @ModelAttribute
+    public void common(Model model) {
+        model.addAttribute("formTitle","My Form");
+        System.out.println("I will run before any handler method");
+    }
+
     @RequestMapping("/form")
-    public String form() {
+    public String showForm() {
+        System.out.println("form running");
         return "form";
     }
+
+    //1. Using @RequestParam to get Data
+    /*
+    @RequestMapping(path = "/proccessform", method = RequestMethod.POST)
+    public String handleForm(
+            @RequestParam("email") String email,
+            @RequestParam(value = "username",required = false) String username,
+            @RequestParam(value="password") String password,
+            Model model
+            ) {
+        System.out.println(email);
+
+        model.addAttribute("email", email);
+        model.addAttribute("username", username);
+        model.addAttribute("password", password);
+
+        return "success";
+    }
+
+     */
+    //2. Using @ModelAttribute to get Data
+    @RequestMapping(path = "/proccessform", method = RequestMethod.POST)
+    public String handleForm(@ModelAttribute User user) {
+        System.out.println(user);
+        return "success";
+    }
+
 }
