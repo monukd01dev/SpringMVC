@@ -21,6 +21,7 @@
 </head>
 <body>
     <div class="container text-left mt-5 border">
+        <h2>${msg}</h2>
         <h2>Hi , <em>${user.username}</em></h2>
         <h2>Your email is : <em>${user.email}</em></h2>
         <h2>Make sure your password is secure , <em>${user.password}</em></h2>

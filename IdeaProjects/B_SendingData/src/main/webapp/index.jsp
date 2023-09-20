@@ -17,6 +17,7 @@
         <ol>
             <li>Model</li>
             <li>ModelAndView</li>
+            <li><a href="form">click to see the form</a></li>
         </ol>
     </fieldset>
 

@@ -1,5 +1,7 @@
 package com.springmvc.model;
 
+import javax.persistence.*;
+
 /*
     Name    : Monu KD (monukd01dev)
     Project : B_SendingData
@@ -11,7 +13,12 @@ package com.springmvc.model;
     GitHub   : https://github.com/monukd01dev
      
 */
+@Entity
+@Table(name = "user_details")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String email;
     private String username;
     private String password;
