@@ -8,9 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <style>
+        h1{
+            text-align: center;
+            line-height: 100vh;
+            vertical-align: center;
+        }
+    </style>
     <title>Hello</title>
 </head>
 <body>
- <H1>Just for checking the working</H1>
+ <H1>Either you are <strong>Redirected</strong> Or <em>Checking your Project</em></H1>
 </body>
 </html>
