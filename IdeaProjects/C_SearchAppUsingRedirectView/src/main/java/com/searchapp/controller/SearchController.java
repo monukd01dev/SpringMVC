@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 /*
@@ -30,13 +31,27 @@ public class SearchController {
     @RequestMapping(path = "/searchOnGoogle", method = RequestMethod.POST)
     public RedirectView searchHandler(@RequestParam(name = "query") String query, RedirectView redirectView, Model model) {
         if (query.isBlank()) {
-            model.addAttribute("showmsg", "vis");
-            redirectView.setUrl("index.jsp");
+            redirectView.setUrl("input-error");
             System.out.println("isempty run");
         }else {
             redirectView.setUrl("https://www.google.com/search?q=" + query);
         }
         return redirectView;
+    }
+
+    @RequestMapping("/input-error")
+    public ModelAndView showError(ModelAndView modelAndView) {
+        modelAndView.addObject("showmsg","vis");
+        modelAndView.addObject("errorMsg","Please put something in it to search");
+
+        modelAndView.setViewName("searchApp");
+        return modelAndView;
+    }
+
+
+    @RequestMapping("/search-app")
+    public String openApp() {
+        return "searchApp";
     }
 
 }
