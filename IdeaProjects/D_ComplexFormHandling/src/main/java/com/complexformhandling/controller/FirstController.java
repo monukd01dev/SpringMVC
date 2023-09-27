@@ -1,7 +1,12 @@
 package com.complexformhandling.controller;
 
+import com.complexformhandling.model.EmpInfo;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /*
     Name    : Monu KD (monukd01dev)
@@ -18,8 +23,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class FirstController {
 
 
-    @RequestMapping("/start")
+    @RequestMapping("/complex-form")
     public String formOpener() {
         return "form";
+    }
+
+    //through @RequestParam
+//    @RequestMapping(path="/process", method = RequestMethod.POST)
+//    public String processForm(
+//            @RequestParam("name")String name,
+//            @RequestParam("email")String email,
+//            Model model
+//    ) {
+//        model.addAttribute("name", name);
+//        model.addAttribute("email", email);
+//        return "success";
+//    }
+
+    // Through ModelAttribute
+    @RequestMapping(path="/process", method = RequestMethod.POST)
+    public String processForm(@ModelAttribute("empInfo")EmpInfo empInfo) {
+        //it will map the object
+        //it will send data to view
+        return "success";
     }
 }
