@@ -3,6 +3,7 @@ package com.complexformhandling.controller;
 import com.complexformhandling.model.EmpInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -42,9 +43,12 @@ public class FirstController {
 
     // Through ModelAttribute
     @RequestMapping(path="/process", method = RequestMethod.POST)
-    public String processForm(@ModelAttribute("empInfo")EmpInfo empInfo) {
+    public String processForm(@ModelAttribute("empInfo")EmpInfo empInfo, BindingResult result) {
         //it will map the object
         //it will send data to view
+        if (result.hasErrors())
+            return "form";
+
         return "success";
     }
 }
