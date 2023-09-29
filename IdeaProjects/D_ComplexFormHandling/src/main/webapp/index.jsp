@@ -1,11 +1,12 @@
-<%--
+<!-- <%--
   Created by IntelliJ IDEA.
   User: monuk
   Date: 26-09-2023
   Time: 22:41
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,14 +16,60 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <style>
+        .my-col{
+            border:1px solid red;
+        }
+      .my-card{
+        object-fit: cover;
+      }
+      .card:hover{
+        transform: scale(1.02) translateY(-10px);
+        transition: 0.2s ease-in-out;
+      }
+    </style>
     <title>Index</title>
 </head>
 <body>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-deck">
+                <div class="card" style="width: 22rem;">
+                    <img class="card-img-top my-card"  style="height: 12rem" src="https://i.ibb.co/Z13dhc9/complexform.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Complex Form</h1></h5>
+                        <p class="card-text">Handling complex form which have custom types images and Error Handling through Spring MVC</p>
+                        <a href="complex-form" class="btn btn-primary">Go To Form</a>
+                    </div>
+                </div>
 
-<a href="complex-form">
-    <button type="button" class="btn btn-primary btn-lg">Go To Form</button>
-</a>
+                <div class="card" style="width: 22rem;">
+                    <img class="card-img-top my-card" style="height: 12rem;" src="https://i.ibb.co/QXZZpnH/images-Icon.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Static Resource Handling</h1></h5>
+                        <p class="card-text">Handling images,css and style files and configuration done with </p>
+                        <a href="showimg" class="btn btn-primary">Go To Form</a>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 22rem;">
+                    <img class="card-img-top my-card" style="height: 12rem;" src="https://i.ibb.co/QXZZpnH/images-Icon.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">File uploadig In MVC</h1></h5>
+                        <p class="card-text">Handling images,css and style files and configuration done with </p>
+                        <a href="uploadForm" class="btn btn-primary">Go To uploadForm</a>
+                    </div>
+                </div>
+                <!-- File uploading form link below -->
+                <!-- <a href="complex-form">
+                    <button type="button" class="btn btn-primary btn-lg">Go To Form</button>
+                </a> -->
+
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- Optional JavaScript -->
