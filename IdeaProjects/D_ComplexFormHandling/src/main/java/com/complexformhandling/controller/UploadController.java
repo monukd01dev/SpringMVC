@@ -28,6 +28,9 @@ import java.io.IOException;
 public class UploadController {
     @RequestMapping("/uploadForm")
     public String openForm() {
+
+        String str=null;
+        str.length();
         return "imgUpload";
     }
 
