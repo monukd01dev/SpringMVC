@@ -18,5 +18,10 @@
         <property name="prefix" value="/WEB-INF/Views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/complex-form"/>
+            <bean class="com.complexformhandling.myinterceptor.MyInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

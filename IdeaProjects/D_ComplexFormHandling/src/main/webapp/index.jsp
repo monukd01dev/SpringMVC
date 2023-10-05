@@ -17,25 +17,34 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-        .my-col{
-            border:1px solid red;
+        body{
+            background-color: azure;
+        }
+        .my-shadow{
+            box-shadow: 0 0 10px 0 #505050;
         }
       .my-card{
         object-fit: cover;
       }
+
       .card:hover{
-        transform: scale(1.02) translateY(-10px);
+        /*transform: scale(1.02) translateY(-10px);*/
+        box-shadow: 0 0 30px 0 #505050;
         transition: 0.2s ease-in-out;
+      }
+      h1{
+          font-weight: bolder;
       }
     </style>
     <title>Index</title>
 </head>
 <body>
+<h1 class="text-center mt-5">Spring MVC</h1>
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-12">
             <div class="card-deck">
-                <div class="card" style="width: 22rem;">
+                <div class="card my-shadow" style="width: 22rem;">
                     <img class="card-img-top my-card"  style="height: 12rem" src="https://i.ibb.co/Z13dhc9/complexform.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Complex Form</h1></h5>
@@ -44,7 +53,7 @@
                     </div>
                 </div>
 
-                <div class="card" style="width: 22rem;">
+                <div class="card my-shadow" style="width: 22rem;">
                     <img class="card-img-top my-card" style="height: 12rem;" src="https://i.ibb.co/QXZZpnH/images-Icon.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Static Resource Handling</h1></h5>
@@ -53,11 +62,11 @@
                     </div>
                 </div>
 
-                <div class="card" style="width: 22rem;">
+                <div class="card my-shadow" style="width: 22rem;">
                     <img class="card-img-top my-card" style="height: 12rem;" src="https://i.ibb.co/QXZZpnH/images-Icon.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">File uploadig In MVC</h1></h5>
-                        <p class="card-text">Handling images,css and style files and configuration done with </p>
+                        <p class="card-text">Save the uploaded image into the resource folder and then show to the user(commons-io and commons-fileupload) </p>
                         <a href="uploadForm" class="btn btn-primary">Go To uploadForm</a>
                     </div>
                 </div>

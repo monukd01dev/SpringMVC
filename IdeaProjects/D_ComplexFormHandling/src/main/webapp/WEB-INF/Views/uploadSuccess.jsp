@@ -25,6 +25,14 @@
       /*  background-position: center;*/
       /*  background-size: cover;*/
       /*} *!*/
+      .img-container{
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 1000px;
+          border:1px solid red;
+          width: 90%;
+          min-width: 300px;
+      }
       img{
         width: 100%;
       }
@@ -33,7 +41,7 @@
 </head>
 <body>
   <h1>Your Uploaded Image</h1>
-  <div>
+  <div class="img-container">
     <img src="<c:url value="/Resources/img/${img}"/>" alt="user uploaded img preview">
   </div>
 </body>

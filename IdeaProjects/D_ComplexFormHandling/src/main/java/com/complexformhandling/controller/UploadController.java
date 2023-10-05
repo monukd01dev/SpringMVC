@@ -29,8 +29,8 @@ public class UploadController {
     @RequestMapping("/uploadForm")
     public String openForm() {
 
-        String str=null;
-        str.length();
+//        String str=null;
+//        str.length();
         return "imgUpload";
     }
 
